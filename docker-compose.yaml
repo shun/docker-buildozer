@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  buildozer:
+    image: kudoshunsuke/buildozer
+    tty: true
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    #  args:
+    #    http_proxy: ${http_proxy}
+    #    https_proxy: ${http_proxy}
+    environment:
+      http_proxy: $http_proxy
+      https_proxy: $http_proxy
+      HTTP_PROXY: $http_proxy
+      HTTPS_PROXY: $http_proxy
+    entrypoint:
+      /bin/bash
